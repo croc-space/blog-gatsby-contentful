@@ -33,13 +33,13 @@ class BlogPostTemplate extends React.Component {
             {post.body?.childMarkdownRemark?.timeToRead} minute read
           </span>
           <div className={styles.article}>
+            <Tags tags={post.tags} />
             <div
               className={styles.body}
               dangerouslySetInnerHTML={{
                 __html: post.body?.childMarkdownRemark?.html,
               }}
             />
-            <Tags tags={post.tags} />
             {(previous || next) && (
               <nav>
                 <ul className={styles.articleNavigation}>
